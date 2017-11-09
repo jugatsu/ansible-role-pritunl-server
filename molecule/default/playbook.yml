@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - role: ansible-role-pritunl-server-trytravis
+    - role: ansible-role-pritunl-server
