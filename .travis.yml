@@ -1,0 +1,26 @@
+---
+sudo: required
+
+language: python
+
+python:
+  - '2.7'
+
+services:
+  - docker
+
+before_install:
+  - rvm default
+  - gem install inspec
+
+install:
+  - virtualenv --python=$(which python2.7) .venv
+  - source .venv/bin/activate
+  - pip install -r requirements.txt
+
+script:
+  - molecule syntax
+  - molecule lint
+  - molecule converge
+  - inspec exec --no-color test/smoke/default -t docker://instance
+  - molecule destroy

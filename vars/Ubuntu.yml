@@ -1,0 +1,6 @@
+---
+# Ubuntu vars file for ansible-role-pritunl-server
+
+pritunl_server_key: 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+pritunl_server_repo: deb http://repo.pritunl.com/stable/apt {{ ansible_distribution_release }} main
+pritunl_server_version: 1.28.1487.93-0ubuntu1~{{ ansible_distribution_release }}

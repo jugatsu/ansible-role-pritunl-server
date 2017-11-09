@@ -1,0 +1,25 @@
+---
+# tasks file for ansible-role-pritunl-server
+
+# we only support Ubuntu distribution
+- name: Check for supported platform
+  assert:
+    that:
+      - "ansible_distribution == 'Ubuntu'"
+    msg: "This role only supports Ubuntu distribution. {{ ansible_distribution }} is not yet supported!"
+
+- name: Ensure all variable files based on the distribution are loaded
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+
+- name: Ensure all tasks based on the distribution are loaded
+  include: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+
+- name: Ensure pritunl service is started and enabled
+  service:
+    name: pritunl
+    enabled: yes
+    state: started
