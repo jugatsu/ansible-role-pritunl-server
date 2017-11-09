@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jugatsu/ansible-role-pritunl-server.svg?branch=master)](https://travis-ci.org/jugatsu/ansible-role-pritunl-server)
+
 Role Name
 =========
 
