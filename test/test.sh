@@ -16,7 +16,12 @@ molecule converge
 sleep 10
 
 # verify with inspec
+echo "Checking inspec version..."
 inspec --version
+
+echo ""
+echo "Running integration tests with inspec..."
+echo ""
 inspec exec --no-color test/smoke/default -t docker://xenial
 inspec exec --no-color test/smoke/default -t docker://trusty
 inspec exec --no-color test/smoke/default -t docker://precise
