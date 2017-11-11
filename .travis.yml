@@ -23,4 +23,6 @@ script:
   - molecule lint
   - molecule converge
   - inspec exec --no-color test/smoke/default -t docker://xenial
+  - inspec exec --no-color test/smoke/default -t docker://trusty
+  - inspec exec --no-color test/smoke/default -t docker://precise
   - molecule destroy
