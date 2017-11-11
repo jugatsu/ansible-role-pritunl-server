@@ -18,12 +18,12 @@ case os[:release]
 when '12.04'
   describe package('pritunl') do
     it { should be_installed }
-    its('version') { should eq '1.28.1445.85-0ubuntu1~precise' }
+    its('version') { should eq '1.28.1487.93-0ubuntu1~precise' }
   end
 when '14.04'
   describe package('pritunl') do
     it { should be_installed }
-    its('version') { should eq '1.28.1445.85-0ubuntu1~trusty' }
+    its('version') { should eq '1.28.1487.93-0ubuntu1~trusty' }
   end
 when '16.04'
   describe package('pritunl') do
