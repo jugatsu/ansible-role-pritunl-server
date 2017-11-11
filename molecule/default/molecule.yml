@@ -11,8 +11,8 @@ lint:
     config-file: molecule/default/.yamllint.yml
 
 platforms:
-  - name: instance
-    image: ubuntu:xenial
+  - name: xenial
+    image: ubuntu:16.04
     privileged: True
     volume_mounts:
       - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
