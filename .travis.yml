@@ -22,5 +22,9 @@ script:
   - molecule syntax
   - molecule lint
   - molecule converge
-  - inspec exec --no-color test/smoke/default -t docker://instance
+  - inspec --version
+  - sleep 10
+  - inspec exec --no-color test/smoke/default -t docker://xenial
+  - inspec exec --no-color test/smoke/default -t docker://trusty
+  - inspec exec --no-color test/smoke/default -t docker://precise
   - molecule destroy
